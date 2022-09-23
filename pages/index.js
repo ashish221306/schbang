@@ -4,11 +4,29 @@ import styles from "../styles/Home.module.css";
 import Carousel from "../components/carousel";
 import Footer from "../components/footer";
 import { nav } from "../public/data";
+import Mobilemenu from "../components/mobilemenu";
+import { useEffect, useRef } from "react";
 export default function Home() {
+  const banner = useRef();
+  const metachanger = () => {
+    const meta = document.head.querySelector('meta[name="theme-color"]');
+    if (window.scrollY > banner.current?.clietHeight) {
+      meta.setAttribute("content", "#fff");
+    } else {
+      meta.setAttribute("content", "#781f1f");
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", metachanger);
+    return () => {
+      window.removeEventListener("scroll", metachanger);
+    };
+  }, []);
+
   return (
-    <div className={styles.cv}>
+    <div className={styles.body}>
       <header
-        className={`${styles.nav} py-2 container d-flex justify-content-between`}
+        className={`${styles.nav} py-3 container d-flex justify-content-between`}
       >
         <div className="d-flex justify-content-between align-items-center">
           <a href="" title="eatiz">
@@ -53,7 +71,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section className={styles.banner}>
+      <section ref={banner} className={styles.banner}>
         <div className="container">
           <div className="row d-flex">
             <div className="col-md-6 col-12">
@@ -263,6 +281,7 @@ export default function Home() {
         </div>
       </section>
       <Footer styles={styles} />
+      <Mobilemenu />
     </div>
   );
 }

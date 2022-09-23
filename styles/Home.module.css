@@ -337,7 +337,9 @@
     width: 100%;
     bottom: 0;
     background: #781f1f;
+    /* background: red; */
   }
+
   .banner h1 {
     color: #d6d2f4;
   }
@@ -364,7 +366,7 @@
     margin: 10px auto;
   }
   .tree {
-    opacity: 0.1;
+    opacity: 0.25;
   }
   .carousel {
     margin: 100px 0;
@@ -391,6 +393,9 @@
     transform: translateX(-50%);
     width: max-content;
   }
+  .profilepic::after {
+    color: rgb(60, 245, 60) !important;
+  }
   .app {
     width: 100%;
   }
@@ -404,11 +409,7 @@
     left: 50%;
   }
   .nav nav {
-    position: fixed;
-    background: #fff;
-    z-index: 5;
-    width: 100%;
-    bottom: 0;
+    display: none !important;
   }
 }
 

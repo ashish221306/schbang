@@ -85,7 +85,7 @@ const Footer = ({ styles }) => {
               </a>
             </li>
           </ul>
-          <small className="my-sm-3">&copy; 2022 Indianpix</small>
+          <small className="my-4 d-sm-block">&copy; 2022 Indianpix</small>
         </div>
       </div>
     </footer>

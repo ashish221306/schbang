@@ -14,6 +14,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
           rel="stylesheet"
         ></link>
+        <meta name="theme-color" content="#781f1f" />
       </Head>
       <body>
         <Main />
