@@ -30,7 +30,7 @@
 }
 .banner {
   display: flex;
-  margin-top: -80px;
+  margin-top: -91px;
   padding: 120px 0;
   background: #fff5ec;
   max-height: 600px;
@@ -320,7 +320,7 @@
 }
 @media screen and (min-width: 1200px) {
   .banner {
-    min-height: max(102vh, 600px);
+    min-height: max(104vh, 600px);
   }
   .footer p {
     width: 50%;
@@ -387,8 +387,9 @@
     margin: 1rem 0;
     text-align: center;
   }
-  .navigation {
+  .carousel .navigation {
     left: 50%;
+    top: 110%;
     transform: translateX(-50%);
     width: max-content;
   }
@@ -403,9 +404,7 @@
     max-height: max-content !important;
   }
   .arrow {
-    transform: translate(-125%, 100%) rotate(-90deg) !important;
-    top: 90%;
-    left: 50%;
+    display: none;
   }
   .nav nav {
     display: none !important;
