@@ -1,1 +1,18 @@
-[{}]
+[
+  {
+    "url": "",
+    "text": "menu one"
+  },
+  {
+    "url": "",
+    "text": "menu two"
+  },
+  {
+    "url": "",
+    "text": "menu three"
+  },
+  {
+    "url": "",
+    "text": "menu four"
+  }
+]

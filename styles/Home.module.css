@@ -1,6 +1,6 @@
 .profilepic {
-  height: 50px;
-  width: 50px;
+  height: 35px;
+  width: 35px;
   position: relative;
 }
 .profilepic::after {
@@ -17,7 +17,7 @@
 .dropdown {
   cursor: pointer;
 }
-.dropdown::before {
+.dropdown::after {
   content: "";
   display: inline-block;
   margin: 10px;
@@ -43,6 +43,7 @@
 }
 .banner .fade {
   color: #2e266f;
+  line-height: 1;
   font-size: 100px;
   opacity: 0.05;
   font-weight: 700;
@@ -77,12 +78,30 @@
   position: sticky;
   z-index: 10;
 }
-.nav a {
+.nav nav a {
   color: #2e266f;
   display: inline-block;
   text-decoration: none;
   text-transform: capitalize;
-  padding: 1rem;
+  padding: 5px 0;
+  margin: 0 15px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.nav nav a::before {
+  content: "";
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: absolute;
+  top: 100%;
+  height: 3px;
+  border-radius: 40px;
+  left: 0;
+  width: 0%;
+  background: #fe043c;
+}
+.nav nav a:hover::before {
+  width: 100%;
 }
 .nav ul {
   list-style: none;
@@ -106,7 +125,7 @@
   padding: 10px;
 }
 .search input::placeholder {
-  color: #ddd;
+  color: #2e266f85;
 }
 .search button {
   background: #fe043c;
@@ -135,6 +154,7 @@
 .carousel {
   position: relative;
 }
+
 .carousel .topleave {
   position: absolute;
   height: 200px;
@@ -259,11 +279,24 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 .services h3 {
   font-size: 18px;
   color: #2e266f;
+}
+.services h3 span {
+  display: inline-block;
+}
+.services h3 span::before {
+  background: #fe043c;
+  content: "";
+  margin: 0 5px;
+  top: -10px;
+  height: 3px;
+  bottom: 100%;
+  width: 50px;
+  display: inline-block;
+  position: relative;
 }
 .items .service .arrow {
   position: absolute;
@@ -288,23 +321,75 @@
 }
 @media screen and (min-width: 1200px) {
   .banner {
-    min-height: max(100vh, 600px);
+    min-height: max(102vh, 600px);
+  }
+  .footer p {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .items {
+    margin: 60px 0;
   }
 }
 @media screen and (max-width: 500px) {
+  .banner::before {
+    width: 100%;
+    bottom: 0;
+    background: #781f1f;
+  }
+  .banner h1 {
+    color: #d6d2f4;
+  }
+  .banner .fade {
+    opacity: 0.2;
+    color: #f1f0f7;
+  }
   .items {
     grid-template-columns: auto;
   }
+  .items div:nth-of-type(1) {
+    order: 1;
+  }
+  .items div:nth-of-type(3) {
+    order: 4;
+  }
+  .items div:nth-of-type(2) {
+    order: 2;
+  }
+  .items div:nth-of-type(4) {
+    order: 3;
+  }
   .download a {
-    height: 80px;
     margin: 10px auto;
-    width: 100%;
+  }
+  .tree {
+    opacity: 0.1;
   }
   .carousel {
     margin: 100px 0;
   }
-  .service {
-    width: 80% !important;
+  /* .carousel::before {
+    content: "";
+    background: rgb(248, 234, 234);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    border-radius: 20px;
+    width: 100%;
+    height: 120%;
+  } */
+  .items .service {
+    width: 100% !important;
+    margin: 1rem 0;
+    height: 300px;
+    text-align: center;
+  }
+  .navigation {
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
   }
   .app {
     width: 100%;
@@ -313,8 +398,62 @@
     min-height: unset !important;
     max-height: max-content !important;
   }
+  .arrow {
+    transform: translate(-125%, 100%) rotate(-90deg) !important;
+    top: 90%;
+    left: 50%;
+  }
   .nav nav {
     position: fixed;
+    background: #fff;
+    z-index: 5;
+    width: 100%;
     bottom: 0;
   }
+}
+
+/*footer section*/
+.footer {
+  color: #273164;
+  background: #fff5ec;
+  padding: 4rem 0;
+  font-family: "Montserrat", sans-serif;
+}
+.footer p {
+  line-height: 1.4;
+}
+.footer h3 {
+  line-height: 1.5;
+  margin: 2rem 0;
+  font-size: clamp(25px, 3vw, 35px);
+}
+.footer .tree {
+  pointer-events: none;
+}
+.footer form {
+  border-radius: 60px;
+  position: relative;
+  max-width: 100%;
+}
+.footer form button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  height: 40px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  box-shadow: 2px 5px 10px 2px rgb(206, 242, 242);
+  background: #fe043c;
+  width: 40px;
+}
+.footer input {
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+}
+.footer a {
+  text-decoration: none;
+  color: #273164;
 }

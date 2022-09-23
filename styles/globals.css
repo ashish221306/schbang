@@ -51,3 +51,7 @@ button {
   font-size: clamp(30px, 3vw, 45px);
   font-weight: 700;
 }
+.smallheading {
+  font-size: 20px;
+  font-weight: 400;
+}

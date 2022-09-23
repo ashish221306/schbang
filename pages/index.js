@@ -1,50 +1,52 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Pagination, Parallax, Navigation, EffectCreative } from "swiper";
 import Carousel from "../components/carousel";
+import Footer from "../components/footer";
+import { nav } from "../public/data";
 export default function Home() {
   return (
     <div className={styles.cv}>
       <header
-        className={`${styles.nav} container d-flex justify-content-between`}
+        className={`${styles.nav} py-2 container d-flex justify-content-between`}
       >
-        <a href="" title="eatiz">
-          <Image
-            objectFit="contain"
-            src="/images/logo.png"
-            height={30}
-            width={130}
-            alt=""
-          ></Image>
-        </a>
-        <nav className="d-flex align-items-center">
-          <ul className="d-flex align-items-center">
-            {[...Array(4)].map((link, i) => {
-              return (
-                <li key={i}>
-                  <Link href="">Menu one</Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+        <div className="d-flex justify-content-between align-items-center">
+          <a href="" title="eatiz">
+            <Image
+              objectFit="contain"
+              priority
+              objectPosition="left"
+              src="/images/logo.png"
+              height={30}
+              width={130}
+              alt=""
+            ></Image>
+          </a>
+          <nav className="d-flex align-items-center">
+            <ul className="d-flex mb-0 align-items-center">
+              {nav.map((link, i) => {
+                return (
+                  <li key={i}>
+                    <Link href={link.url}>{link.text}</Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+        </div>
         <div className="profile position-relative d-flex align-items-center">
           <span className={styles.profilepic}>
             <Image
               src="/images/profile.png"
               alt=""
+              property=""
               className="rounded-circle"
               layout="fill"
               objectFit="cover"
             ></Image>
           </span>
           <span
-            className={`${styles.dropdown} cursor-pointer text-white d-flex`}
+            className={`${styles.dropdown} mx-2 cursor-pointer text-white d-flex`}
           >
             user
           </span>
@@ -53,7 +55,7 @@ export default function Home() {
 
       <section className={styles.banner}>
         <div className="container">
-          <div className="row d-flex  align-items-center">
+          <div className="row d-flex">
             <div className="col-md-6 col-12">
               <span className={styles.fade}>FOOD</span>
               <h1 className="mb-4">
@@ -103,7 +105,7 @@ export default function Home() {
           </div>
 
           <div className="row">
-            <div className={`col-md-7 col-12 ${styles.items}`}>
+            <div className={`col-lg-7 col-12 ${styles.items}`}>
               <div className="col-md-6 col-12">
                 <div className={`${styles.service} ${styles.bg}`}>
                   <Image
@@ -128,7 +130,7 @@ export default function Home() {
                 <div className={styles.service}>
                   <h3>
                     advanced table <br></br>
-                    <span>booking</span>
+                    <span className="position-relative">booking</span>
                   </h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -140,7 +142,7 @@ export default function Home() {
                 <div className={styles.service}>
                   <h3>
                     Food for Free<br></br>
-                    <span>24/7</span>
+                    <span className="position-relative">24/7</span>
                   </h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -169,7 +171,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="col-md-5 col-12">
+            <div className="col-lg-5 col-12">
               <div
                 className={`${styles.delivery} p-4  d-flex justify-center  flex-column`}
               >
@@ -260,6 +262,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Footer styles={styles} />
     </div>
   );
 }

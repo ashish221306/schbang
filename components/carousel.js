@@ -1,9 +1,7 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/effect-creative";
-import "swiper/css/navigation";
 import { Pagination, Parallax, Navigation, EffectCreative } from "swiper";
 const Carousel = ({ styles }) => {
   return (
@@ -70,8 +68,8 @@ const Carousel = ({ styles }) => {
           },
         }}
         navigation={{
-          prevEl: `.prev`,
-          nextEl: `.next`,
+          prevEl: ".prev",
+          nextEl: ".next",
         }}
         centeredSlides={true}
         parallax={true}
@@ -83,8 +81,8 @@ const Carousel = ({ styles }) => {
               <Image
                 objectFit="contain"
                 src="/images/plate.png"
-                height={400}
-                width={400}
+                height={450}
+                width={450}
                 alt=""
               />
             </SwiperSlide>
