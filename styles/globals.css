@@ -49,6 +49,9 @@ button {
 .w-50 {
   width: 50%;
 }
+.heading-color {
+  color: #2e266f;
+}
 .heading {
   color: #2e266f;
   font-size: clamp(36px, 3.7vw, 50px) !important;

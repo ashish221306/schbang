@@ -36,7 +36,7 @@ const Footer = ({ styles }) => {
               type="submit"
               className="d-flex justify-content-center align-items-center"
             >
-              <BsArrowRightShort size={20} color="#fff" />
+              <BsArrowRightShort size={22} color="#fff" />
             </button>
           </form>
           <ul className="d-flex mt-4 flex-wrap list-unstyled justify-content-center align-items-center">

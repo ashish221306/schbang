@@ -31,9 +31,9 @@
 .banner {
   display: flex;
   margin-top: -91px;
-  padding: 25vh 0;
+  padding: 200px 0;
   background: #fff5ec;
-  max-height: 600px;
+  max-height: 700px;
   position: relative;
   justify-content: space-between;
 }
@@ -85,10 +85,27 @@
   transition: all 0.3s;
   border-radius: 0 40px 40px 0;
 }
-
 .nav {
-  position: sticky;
+  transition: all 0.6s ease-in-out;
+  position: relative;
+  top: 0;
   z-index: 10;
+  background: transparent;
+}
+.nav.hidden {
+  position: fixed;
+  top: -80px;
+}
+.nav.active {
+  position: sticky;
+  background: #ffedde;
+  box-shadow: 0 0 20px 2px rgba(237, 196, 196, 0.88);
+  top: 0px;
+  z-index: 10;
+}
+.nav.nav.active .dropdown,
+.nav.active .dropdown::after {
+  color: #2e266f !important;
 }
 .nav nav a {
   color: #2e266f;
@@ -262,7 +279,81 @@
   position: relative;
   margin: 10px 20px 0 10px;
 }
+/*seemore section*/
+.seemore {
+  padding: 4rem 0;
+}
 
+.seemore .card {
+  height: 400px;
+  position: relative;
+  margin: 20px 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.seemore .card .shape {
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  background: url();
+}
+.card img {
+  transition: all 0.3s;
+}
+.card:hover img {
+  object-position: top;
+}
+.card .content {
+  position: absolute;
+  left: 0;
+  padding: 1rem;
+  color: #fff;
+  bottom: 0;
+  height: max-content;
+  width: 100%;
+  background: #fe0477bb;
+}
+.seemorebox {
+  width: 200px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #e3345f;
+}
+
+.more_arrow::before {
+  content: "";
+  width: 100px;
+  position: relative;
+  top: 50%;
+  height: 3px;
+  background: #e3345f;
+}
+.more_arrow svg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #e3345f;
+}
+.card .content h3 {
+  font-weight: 700;
+}
+.booknow {
+  padding: 10px 20px;
+  text-decoration: none;
+  background: #fff;
+  color: #e3345f;
+  cursor: pointer;
+  border-bottom-right-radius: 4px;
+}
+.booknow:hover {
+  color: #e3345f;
+}
 /*service section*/
 .services {
   background: #fff5ec;
@@ -342,10 +433,26 @@
   .footer p {
     width: 50%;
   }
+  .nogutter {
+    margin-left: calc(-4.5 * var(--bs-gutter-x)) !important;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .download .leave {
+    position: absolute;
+    bottom: 10%;
+    right: -3%;
+  }
 }
 @media screen and (max-width: 768px) {
   .items {
     margin: 60px 0;
+  }
+  .tree {
+    display: none;
+  }
+  .nav nav {
+    display: none !important;
   }
 }
 @media screen and (max-width: 500px) {
@@ -392,9 +499,7 @@
   .download a {
     margin: 10px auto;
   }
-  .tree {
-    display: none;
-  }
+
   .carousel {
     margin: 100px 0;
   }
@@ -429,12 +534,10 @@
   .banner {
     min-height: unset !important;
     max-height: max-content !important;
+    padding: 110px 0;
   }
   .arrow {
     display: none;
-  }
-  .nav nav {
-    display: none !important;
   }
 }
 

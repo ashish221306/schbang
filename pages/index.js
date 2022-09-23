@@ -3,9 +3,12 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import Carousel from "../components/carousel";
 import Footer from "../components/footer";
-import { nav } from "../public/data";
 import Mobilemenu from "../components/mobilemenu";
 import { useEffect, useRef } from "react";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { BsArrowRight } from "react-icons/bs";
+import { MdKeyboardArrowRight } from "react-icons/md";
+import Header from "../components/header";
 export default function Home() {
   const banner = useRef();
   const metachanger = () => {
@@ -25,52 +28,7 @@ export default function Home() {
 
   return (
     <div className={styles.body}>
-      <header
-        className={`${styles.nav} py-3 container d-flex justify-content-between`}
-      >
-        <div className="d-flex justify-content-between align-items-center">
-          <a href="" title="eatiz">
-            <Image
-              objectFit="contain"
-              priority
-              objectPosition="left"
-              src="/images/logo.png"
-              height={30}
-              width={130}
-              alt=""
-            ></Image>
-          </a>
-          <nav className="d-flex align-items-center">
-            <ul className="d-flex mb-0 align-items-center">
-              {nav.map((link, i) => {
-                return (
-                  <li key={i}>
-                    <Link href={link.url}>{link.text}</Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-        </div>
-        <div className="profile position-relative d-flex align-items-center">
-          <span className={styles.profilepic}>
-            <Image
-              src="/images/profile.png"
-              alt=""
-              property=""
-              className="rounded-circle"
-              layout="fill"
-              objectFit="cover"
-            ></Image>
-          </span>
-          <span
-            className={`${styles.dropdown} mx-2 cursor-pointer text-white d-flex`}
-          >
-            user
-          </span>
-        </div>
-      </header>
-
+      <Header styles={styles} />
       <section ref={banner} className={styles.banner}>
         <div className="container">
           <div className="row d-flex">
@@ -100,6 +58,105 @@ export default function Home() {
               width={20}
             ></Image>
             <span className="d-inline-block mx-3">Hydrabad</span>
+          </div>
+        </div>
+      </section>
+      <section className={styles.seemore}>
+        <div className="container">
+          <div className="row mb-4 pb-4">
+            <div className="col-md-3 col-12">
+              <h2 className="smallheading heading-color position-relative d-flex">
+                some top restaurant<br></br> for dining out or in!
+              </h2>
+            </div>
+            <div className="col-md-9 col-12">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+          </div>
+          <div className={`row ${styles.nogutter}`}>
+            <div className="col-md-5 col-12">
+              <div className={`${styles.card} position-relative`}>
+                <Image
+                  src="/images/card1.png"
+                  layout="fill"
+                  objectFit="cover"
+                  alt=""
+                />
+                <div className={styles.content}>
+                  <h3>Fire Water</h3>
+                  <p>
+                    we are all about we are all about to the fullest and all
+                    content dining out or in!dining out or in!
+                  </p>
+                  <div className="d-flex flex-wrap justify-content-between align-items-center">
+                    <span className="d-flex">
+                      <FaMapMarkerAlt size={20} />
+                      Hitech City
+                    </span>
+                    <Link href="">
+                      <a className={styles.booknow}>
+                        Book Now <BsArrowRight size={20} />
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-5 col-12">
+              <div className={`${styles.card} position-relative`}>
+                <span className={styles.shape}>
+                  <Image
+                    src="/images/shape.png"
+                    layout="fill"
+                    objectFit="contain"
+                    alt=""
+                  />
+                </span>
+                <Image
+                  src="/images/card1.png"
+                  layout="fill"
+                  objectFit="cover"
+                  alt=""
+                />
+                <div className={styles.content}>
+                  <h3>Fire Water</h3>
+                  <p>
+                    we are all about we are all about to the fullest and all
+                    content dining out or in!dining out or in!
+                  </p>
+                  <div className="d-flex flex-wrap justify-content-between align-items-center">
+                    <span className="d-flex">
+                      <FaMapMarkerAlt size={20} />
+                      Hitech City
+                    </span>
+                    <Link href="">
+                      <a className={styles.booknow}>
+                        Book Now <BsArrowRight size={20} />
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-2 col-12 d-flex justify-content-center">
+              <Link href="">
+                <span className={`${styles.seemorebox} mt-4 mt-md-0`}>
+                  <span className={`${styles.more_arrow} d-flex`}>
+                    <MdKeyboardArrowRight
+                      className="position-relative"
+                      size={20}
+                      color="#fff"
+                    />
+                  </span>
+                  <span>see more</span>
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
