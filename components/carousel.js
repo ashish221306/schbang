@@ -2,7 +2,13 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-creative";
-import { Pagination, Parallax, Navigation, EffectCreative } from "swiper";
+import {
+  Pagination,
+  Autoplay,
+  Parallax,
+  Navigation,
+  EffectCreative,
+} from "swiper";
 const Carousel = ({ styles }) => {
   return (
     <div
@@ -45,7 +51,15 @@ const Carousel = ({ styles }) => {
           objectFit="contain"
           priority
           src="/images/shape.svg"
-          height={300}
+          height={250}
+          width={300}
+          alt=""
+        />
+        <Image
+          objectFit="contain"
+          priority
+          src="/images/shape.svg"
+          height={250}
           width={300}
           alt=""
         />
@@ -54,8 +68,9 @@ const Carousel = ({ styles }) => {
         spaceBetween={50}
         slidesPerView={1}
         loop={true}
+        preloadImages
         autoplay={{
-          delay: 200,
+          delay: 2500,
           disableOnInteraction: false,
         }}
         creativeEffect={{
@@ -73,7 +88,7 @@ const Carousel = ({ styles }) => {
         }}
         centeredSlides={true}
         parallax={true}
-        modules={[Parallax, EffectCreative, Pagination, Navigation]}
+        modules={[Parallax, Autoplay, EffectCreative, Pagination, Navigation]}
       >
         {[...Array(10)].map((sl, i) => {
           return (

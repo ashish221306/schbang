@@ -76,7 +76,7 @@ export default function Home() {
           <div className="row d-flex">
             <div className="col-md-6 col-12">
               <span className={styles.fade}>FOOD</span>
-              <h1 className="mb-4">
+              <h1 className="mb-4 heading">
                 Discover restaurent<br></br> &amp; Delicious food
               </h1>
               <form
@@ -99,7 +99,7 @@ export default function Home() {
               height={20}
               width={20}
             ></Image>
-            <span className="d-inline-block ml-2">Hydrabad</span>
+            <span className="d-inline-block mx-3">Hydrabad</span>
           </div>
         </div>
       </section>
