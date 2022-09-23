@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --themeBg: #fff5ec;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  padding: 3px;
+  background: var(--themeBg);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 40px;
+  height: 100px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+  background: #f1f1f1;
+}
+button {
+  cursor: pointer;
+}
+.container {
+  padding: 0 6%;
+}
+.gap-10 {
+  gap: 2rem;
+}
+.d-flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.items-center {
+  align-items: center;
+}
+.w-50 {
+  width: 50%;
+}
+.heading {
+  color: #2e266f;
+  font-size: clamp(30px, 3vw, 45px);
+  font-weight: 700;
+}
