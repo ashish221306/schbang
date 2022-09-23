@@ -6,7 +6,7 @@ const Header = ({ styles }) => {
   const header = useRef();
   useEffect(() => {
     var prev = window.scrollY;
-    window.onscroll = () => {
+    const stickyheader = () => {
       if (prev > window.scrollY) {
         header.current.classList.add(`${styles.active}`);
         header.current.classList.remove(`${styles.hidden}`);
@@ -18,6 +18,16 @@ const Header = ({ styles }) => {
         header.current.classList.remove(`${styles.active}`);
       }
       prev = window.scrollY;
+    };
+    if (
+      !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      window.onscroll = stickyheader;
+    }
+    return () => {
+      window.removeEventListener("scroll", stickyheader);
     };
   }, [styles]);
 

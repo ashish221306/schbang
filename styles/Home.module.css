@@ -84,7 +84,7 @@
 }
 .nav {
   transition: all 0.6s ease-in;
-  position: fixed;
+  position: relative;
   top: 0;
   z-index: 10;
   background: transparent;
