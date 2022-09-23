@@ -11,7 +11,7 @@ export default function Home() {
   const metachanger = () => {
     const meta = document.head.querySelector('meta[name="theme-color"]');
     if (window.scrollY > banner.current?.clientHeight) {
-      meta.setAttribute("content", "#fff");
+      meta.setAttribute("content", "#fff5ec");
     } else {
       meta.setAttribute("content", "#781f1f");
     }
