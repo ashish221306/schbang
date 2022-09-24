@@ -370,11 +370,12 @@
   background: #fff5ec;
 }
 
-.seemore .card {
-  height: 400px;
+.seemore .card > div {
+  height: 420px;
   position: relative;
-  margin: 20px 0;
+  overflow: hidden;
   border-radius: 8px;
+  margin: 20px 0;
 }
 .seemore .card .shape {
   height: 50%;

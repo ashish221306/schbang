@@ -109,28 +109,30 @@ export default function Home() {
                     alt=""
                   />
                 </span>
-                <Image
-                  src="/images/card1.png"
-                  layout="fill"
-                  objectFit="cover"
-                  alt=""
-                />
-                <div className={styles.content}>
-                  <h3>Fire Water</h3>
-                  <p>
-                    we are all about we are all about to the fullest and all
-                    content dining out or in!dining out or in!
-                  </p>
-                  <div className="d-flex flex-wrap justify-content-between align-items-center">
-                    <span className="d-flex">
-                      <FaMapMarkerAlt size={20} />
-                      Hitech City
-                    </span>
-                    <Link href="">
-                      <a className={styles.booknow}>
-                        Book Now <BsArrowRight size={20} />
-                      </a>
-                    </Link>
+                <div className="position-relative">
+                  <Image
+                    src="/images/card1.png"
+                    layout="fill"
+                    objectFit="cover"
+                    alt=""
+                  />
+                  <div className={styles.content}>
+                    <h3>Fire Water</h3>
+                    <p>
+                      we are all about we are all about to the fullest and all
+                      content dining out or in!dining out or in!
+                    </p>
+                    <div className="d-flex flex-wrap justify-content-between align-items-center">
+                      <span className="d-flex">
+                        <FaMapMarkerAlt size={20} />
+                        Hitech City
+                      </span>
+                      <Link href="">
+                        <a className={styles.booknow}>
+                          Book Now <BsArrowRight size={20} />
+                        </a>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -148,28 +150,30 @@ export default function Home() {
                     alt=""
                   />
                 </span>
-                <Image
-                  src="/images/card1.png"
-                  layout="fill"
-                  objectFit="cover"
-                  alt=""
-                />
-                <div className={styles.content}>
-                  <h3>Fire Water</h3>
-                  <p>
-                    we are all about we are all about to the fullest and all
-                    content dining out or in!dining out or in!
-                  </p>
-                  <div className="d-flex flex-wrap justify-content-between align-items-center">
-                    <span className="d-flex">
-                      <FaMapMarkerAlt size={20} />
-                      Hitech City
-                    </span>
-                    <Link href="">
-                      <a className={styles.booknow}>
-                        Book Now <BsArrowRight size={20} />
-                      </a>
-                    </Link>
+                <div className="position-relative">
+                  <Image
+                    src="/images/card1.png"
+                    layout="fill"
+                    objectFit="cover"
+                    alt=""
+                  />
+                  <div className={styles.content}>
+                    <h3>Fire Water</h3>
+                    <p>
+                      we are all about we are all about to the fullest and all
+                      content dining out or in!dining out or in!
+                    </p>
+                    <div className="d-flex flex-wrap justify-content-between align-items-center">
+                      <span className="d-flex">
+                        <FaMapMarkerAlt size={20} />
+                        Hitech City
+                      </span>
+                      <Link href="">
+                        <a className={styles.booknow}>
+                          Book Now <BsArrowRight size={20} />
+                        </a>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
