@@ -1,3 +1,7 @@
+.body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 .profilepic {
   height: 35px;
   width: 35px;
@@ -545,7 +549,9 @@
     background: #781f1f;
     /* background: red; */
   }
-
+  .pin {
+    bottom: 3%;
+  }
   .banner h1 {
     color: #ffffff;
   }

@@ -58,7 +58,7 @@ export default function Home() {
             </div>
             <div
               className="col-md-6 col-12"
-              data-aos="fade-left"
+              data-aos="fade-up"
               data-aos-anchor="#example-anchor"
               data-aos-offset="500"
               data-aos-duration="500"
