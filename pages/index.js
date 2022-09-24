@@ -32,7 +32,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={styles.body}>
+    <div className={`${styles.body} overflow-x-hidden`}>
       <Header styles={styles} />
       <section ref={banner} className={styles.banner}>
         <div className="container">
