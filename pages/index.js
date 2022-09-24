@@ -6,9 +6,12 @@ import Footer from "../components/footer";
 import Mobilemenu from "../components/mobilemenu";
 import { useEffect, useRef } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import "aos/dist/aos";
 import { BsArrowRight } from "react-icons/bs";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Header from "../components/header";
+import AOS from "aos";
+import "aos/dist/aos.css";
 export default function Home() {
   const banner = useRef();
   const metachanger = () => {
@@ -20,6 +23,8 @@ export default function Home() {
     }
   };
   useEffect(() => {
+    AOS.init();
+    AOS.refresh();
     window.addEventListener("scroll", metachanger);
     return () => {
       window.removeEventListener("scroll", metachanger);
@@ -32,10 +37,16 @@ export default function Home() {
       <section ref={banner} className={styles.banner}>
         <div className="container">
           <div className="row d-flex">
-            <div className="col-md-6 col-12">
+            <div
+              className="col-md-6 col-12 "
+              data-aos="fade-right"
+              data-aos-offset="300"
+              data-aos-easing="ease-in-sine"
+            >
               <span className={styles.fade}>FOOD</span>
               <h1 className="mb-4 heading">
-                Discover restaurent<br></br> &amp; Delicious food
+                Discover restaurent<br></br> &amp;{" "}
+                <span className={styles.strong}>Delicious</span> food
               </h1>
               <form
                 onSubmit={(e) => e.preventDefault()}
@@ -45,7 +56,13 @@ export default function Home() {
                 <button type="submit">GO</button>
               </form>
             </div>
-            <div className="col-md-6 col-12">
+            <div
+              className="col-md-6 col-12"
+              data-aos="fade-left"
+              data-aos-anchor="#example-anchor"
+              data-aos-offset="500"
+              data-aos-duration="500"
+            >
               <Carousel styles={styles} />
             </div>
           </div>
@@ -64,12 +81,12 @@ export default function Home() {
       <section className={styles.seemore}>
         <div className="container">
           <div className="row mb-4 pb-4">
-            <div className="col-md-3 col-12">
+            <div className="col-md-4 mb-4  mb-md-0 col-12">
               <h2 className="smallheading heading-color position-relative d-flex">
-                some top restaurant<br></br> for dining out or in!
+                some top restaurant for <br></br>dining out or in!
               </h2>
             </div>
-            <div className="col-md-9 col-12">
+            <div className="col-md-8 col-12">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -80,7 +97,10 @@ export default function Home() {
           </div>
           <div className={`row ${styles.nogutter}`}>
             <div className="col-md-5 col-12">
-              <div className={`${styles.card} position-relative`}>
+              <div
+                className={`${styles.card} position-relative`}
+                data-aos="fade-left"
+              >
                 <Image
                   src="/images/card1.png"
                   layout="fill"
@@ -108,7 +128,10 @@ export default function Home() {
               </div>
             </div>
             <div className="col-md-5 col-12">
-              <div className={`${styles.card} position-relative`}>
+              <div
+                className={`${styles.card} position-relative`}
+                data-aos="fade-left"
+              >
                 <span className={styles.shape}>
                   <Image
                     src="/images/shape.png"
@@ -162,10 +185,14 @@ export default function Home() {
       </section>
       <section className={styles.services}>
         <div className="container">
-          <div className="row mb-4 pb-4">
+          <div
+            className="row mb-4 pb-4"
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+          >
             <div className="col-md-3 col-12">
               <h2 className="heading position-relative d-flex">
-                Our<br></br> Services
+                Our<br className="d-none d-sm-block"></br> Services
               </h2>
             </div>
             <div className="col-md-9 col-12">
@@ -181,7 +208,11 @@ export default function Home() {
 
           <div className="row">
             <div className={`col-lg-7 col-12 ${styles.items}`}>
-              <div className="col-md-6 col-12">
+              <div
+                className="col-md-6 col-12"
+                data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom"
+              >
                 <div className={`${styles.service} ${styles.bg}`}>
                   <Image
                     src="/images/meeting.png"
@@ -201,7 +232,11 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-              <div className="col-md-6 col-12">
+              <div
+                className="col-md-6 col-12"
+                data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom"
+              >
                 <div className={styles.service}>
                   <h3>
                     advanced table <br></br>
@@ -213,7 +248,11 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="col-md-6 col-12">
+              <div
+                className="col-md-6 col-12"
+                data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom"
+              >
                 <div className={styles.service}>
                   <h3>
                     Food for Free<br></br>
@@ -234,7 +273,11 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-              <div className="col-md-6 col-12">
+              <div
+                className="col-md-6 col-12"
+                data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom"
+              >
                 <div className={`${styles.service} ${styles.bg}`}>
                   <Image
                     src="/images/dish.png"
@@ -270,7 +313,11 @@ export default function Home() {
         </div>
       </section>
       <section className={styles.download}>
-        <div className="container">
+        <div
+          className="container"
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-center"
+        >
           <div className="row">
             <div className="col-md-7 col-12 d-flex flex-column justify-content-center">
               <div className="px-3">

@@ -38,6 +38,20 @@
   color: #2e266f;
   font-weight: 700;
 }
+@keyframes zoomin {
+  0% {
+    opacity: 0.9;
+    color: #fe043c;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.banner .strong {
+  transition: all 0.3s;
+  display: inline-block;
+  animation: zoomin 1s ease-in-out infinite alternate;
+}
 .banner .fade {
   color: #2e266f;
   line-height: 1;
@@ -549,6 +563,7 @@
       transform: translateX(0px);
     }
   }
+
   .items {
     grid-template-columns: auto;
     margin: 0;
