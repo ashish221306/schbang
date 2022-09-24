@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { nav } from "../public/data";
+import { nav, profile } from "../public/data";
 const Header = ({ styles }) => {
   const header = useRef();
   useEffect(() => {
@@ -50,15 +50,30 @@ const Header = ({ styles }) => {
             <ul className="d-flex mb-0 align-items-center">
               {nav.map((link, i) => {
                 return (
-                  <li key={i}>
-                    <Link href={link.url}>{link.text}</Link>
+                  <li key={i} className={`position-relative ${styles.menu}`}>
+                    <Link href={link.url}>
+                      <a>{link.text}</a>
+                    </Link>
+                    <ul className={`list-unstyled mb-0 d-flex flex-column `}>
+                      {link.menu.map((item, index) => {
+                        return (
+                          <li className="py-1 position-relative" key={index}>
+                            <Link href={item.url}>
+                              <a>{item.text}</a>
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
                   </li>
                 );
               })}
             </ul>
           </nav>
         </div>
-        <div className="profile position-relative d-flex align-items-center">
+        <div
+          className={`profile position-relative d-flex align-items-center ${styles.menu}`}
+        >
           <span className={styles.profilepic}>
             <Image
               src="/images/profile.png"
@@ -74,6 +89,21 @@ const Header = ({ styles }) => {
           >
             user
           </span>
+          <div className={styles.profile}>
+            <table>
+              <tbody>
+                {Object.keys(profile).map((d, i) => {
+                  return (
+                    <tr key={i}>
+                      <td>{d}</td>
+                      <td>:</td>
+                      <td>{profile[d]}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </header>

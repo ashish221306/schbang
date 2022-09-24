@@ -1,18 +1,74 @@
 [
   {
     "url": "",
-    "text": "menu one"
+    "text": "menu one",
+    "menu": [
+      {
+        "url": "",
+        "text": "biryani"
+      },
+      {
+        "url": "",
+        "text": "noodles"
+      },
+      {
+        "url": "",
+        "text": "noodles"
+      }
+    ]
   },
   {
     "url": "",
-    "text": "menu two"
+    "text": "menu two",
+    "menu": [
+      {
+        "url": "",
+        "text": "biryani"
+      },
+      {
+        "url": "",
+        "text": "noodles"
+      },
+      {
+        "url": "",
+        "text": "noodles"
+      }
+    ]
   },
   {
     "url": "",
-    "text": "menu three"
+    "text": "menu three",
+    "menu": [
+      {
+        "url": "",
+        "text": "biryani"
+      },
+      {
+        "url": "",
+        "text": "noodles"
+      },
+      {
+        "url": "",
+        "text": "noodles"
+      }
+    ]
   },
   {
     "url": "",
-    "text": "menu four"
+    "text": "menu four",
+    "menu": [
+      {
+        "url": "",
+        "text": "biryani"
+      },
+      {
+        "url": "",
+        "text": "noodles"
+      },
+      {
+        "url": "",
+        "text": "noodles"
+      }
+    ]
   }
 ]

@@ -27,10 +27,10 @@
 
 .banner {
   display: flex;
-  margin-top: -91px;
+  margin-top: -130px;
   padding: 200px 0;
   background: #fff5ec;
-  max-height: 700px;
+  max-height: max(calc(100vh + 100px), 700px);
   position: relative;
   justify-content: space-between;
 }
@@ -71,7 +71,7 @@
 }
 .pin {
   position: absolute;
-  bottom: 2rem;
+  bottom: 10%;
   cursor: pointer;
   padding: 10px 20px 10px 10px;
   background: red;
@@ -82,6 +82,7 @@
   transition: all 0.3s;
   border-radius: 0 40px 40px 0;
 }
+/*header*/
 .nav {
   transition: all 0.6s ease-in;
   position: relative;
@@ -90,7 +91,6 @@
   background: transparent;
 }
 .nav.hidden {
-  position: fixed;
   top: -80px;
 }
 .nav.active {
@@ -116,27 +116,87 @@
   position: relative;
   transition: all 0.3s;
 }
-
-.nav nav a::before {
+.menu {
+  cursor: pointer;
+}
+.nav nav li:not(.menu):before {
   content: "";
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.3s ease-in-out;
   position: absolute;
   top: 100%;
-  height: 3px;
+  height: 2px;
   border-radius: 40px;
   left: 0;
   width: 0%;
   background: #fe043c;
 }
-.nav nav a:hover::before {
+.nav nav > ul > li:hover {
+  background: #fff;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 3px 3px 1px rgba(237, 196, 196, 0.88);
+}
+.nav nav li:hover::before {
   width: 100%;
 }
+
 .nav ul {
   list-style: none;
   display: flex;
   align-items: center;
   align-items: center;
 }
+.menu > ul,
+.menu .profile {
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 3px 3px 1px rgba(237, 196, 196, 0.88);
+  top: 130%;
+  opacity: 0;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+.menu .profile {
+  color: #999;
+  padding: 1rem;
+  font-size: 14px;
+  width: 300px;
+  border-radius: 8px;
+  right: 0;
+  background: #ffffff;
+}
+.menu .profile::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  right: 10%;
+  border: 10px solid;
+  border-color: transparent transparent #fff transparent;
+}
+.menu .profile table td {
+  padding: 10px;
+  color: #999;
+  text-transform: capitalize;
+}
+.menu ul li {
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+}
+.menu li a {
+  color: #e33460cb;
+}
+
+.menu:hover ul,
+.menu:hover .profile,
+.menu ul:hover {
+  top: 100%;
+  pointer-events: all;
+  opacity: 1;
+}
+/*header end*/
+
 .search {
   padding: 5px;
   overflow: hidden;
@@ -243,7 +303,8 @@
   display: flex;
 }
 .download h2::before,
-.services h2::before {
+.services h2::before,
+.seemore h2::before {
   content: "";
   position: relative;
   bottom: 20px;
@@ -252,7 +313,9 @@
   display: block;
   background: #fe043c;
 }
-
+.seemore h2::before {
+  bottom: 5px;
+}
 .app {
   position: relative;
   height: 600px;
@@ -276,11 +339,16 @@
   display: inline-block;
   width: 180px;
   position: relative;
+  transition: all 0.3s ease-in-out;
   margin: 10px 20px 0 10px;
+}
+.download a:hover {
+  transform: scale(0.9);
 }
 /*seemore section*/
 .seemore {
   padding: 4rem 0;
+  background: #fff5ec;
 }
 
 .seemore .card {
@@ -327,7 +395,7 @@
 
 .more_arrow::before {
   content: "";
-  width: 100px;
+  width: 50px;
   position: relative;
   top: 50%;
   height: 3px;
@@ -348,10 +416,12 @@
   background: #fff;
   color: #e3345f;
   cursor: pointer;
+  transition: all 0.3s;
   border-bottom-right-radius: 4px;
 }
 .booknow:hover {
   color: #e3345f;
+  transform: scale(0.96);
 }
 /*service section*/
 .services {

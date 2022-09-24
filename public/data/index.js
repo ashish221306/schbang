@@ -1,2 +1,3 @@
 import nav from "./nav.json";
-export { nav };
+import profile from "./profile.json";
+export { nav, profile };
