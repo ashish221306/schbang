@@ -1,6 +1,7 @@
 .body section {
   max-width: 100%;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 .profilepic {
   height: 35px;
@@ -374,16 +375,20 @@
   position: relative;
   margin: 20px 0;
   border-radius: 8px;
-  overflow: hidden;
 }
 .seemore .card .shape {
   height: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateY(-50%);
   width: 50%;
-  background: url();
+  position: absolute;
+}
+.seemore .card .shape.top {
+  bottom: 60%;
+  left: 1%;
+}
+
+.seemore .card .shape.bottom {
+  top: 75%;
+  left: 75%;
 }
 .card img {
   transition: all 0.3s;

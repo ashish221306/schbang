@@ -98,9 +98,17 @@ export default function Home() {
           <div className={`row ${styles.nogutter}`}>
             <div className="col-md-5 col-12">
               <div
-                className={`${styles.card} position-relative`}
+                className={`${styles.card}  position-relative`}
                 data-aos="fade-left"
               >
+                <span className={`${styles.shape} ${styles.top}`}>
+                  <Image
+                    src="/images/shape.svg"
+                    layout="fill"
+                    objectFit="contain"
+                    alt=""
+                  />
+                </span>
                 <Image
                   src="/images/card1.png"
                   layout="fill"
@@ -129,12 +137,12 @@ export default function Home() {
             </div>
             <div className="col-md-5 col-12">
               <div
-                className={`${styles.card} position-relative`}
+                className={`${styles.card}  position-relative`}
                 data-aos="fade-left"
               >
-                <span className={styles.shape}>
+                <span className={`${styles.shape} ${styles.bottom}`}>
                   <Image
-                    src="/images/shape.png"
+                    src="/images/shape.svg"
                     layout="fill"
                     objectFit="contain"
                     alt=""
